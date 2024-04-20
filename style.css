@@ -1,0 +1,12 @@
+#like {
+    border: none;
+    color: grey;
+}
+
+#like:focus {
+    border: none;
+}
+
+.red-heart {
+    color: red;
+}
