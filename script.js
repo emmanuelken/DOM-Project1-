@@ -85,10 +85,14 @@ function totalCost(product) {
         let productPrice = parseInt(product.price);
         cartCost += productPrice;
         localStorage.setItem('totalCost', cartCost);
+        document.getElementById('tp').textContent = cartCost;
     } else {
         localStorage.setItem('totalCost', product.price);
+        document.getElementById('tp').textContent = product.price;
     }
 }
+
+
 //Removing products from the cart
 function removeItemFromCart(productTag) {
     let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
@@ -117,6 +121,9 @@ function removeItemFromCart(productTag) {
 
         localStorage.setItem('productsInCart', JSON.stringify(cartItems));
         localStorage.setItem('totalCost', cartCost);
+
+        document.getElementById('tp').textContent = cartCost;
+
         updateCartCounter();
     }
 }
